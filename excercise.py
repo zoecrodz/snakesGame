@@ -29,16 +29,16 @@ def openMenu(partidasJugadas, estadisticas):
         return print('Nos vemos pronto!')
 
 def playSnakes(partidasJugadas, estadisticas):
-    fila1 = [1, 2, 'E', 4, 5, 'E', 7, 8, 9, 'M']
-    fila2 = [11, 'R', 13, 14, 15, 16, 'M', 18, 19, 20]
-    fila3 = ['CB', 22, 23, 24, 'CB', 26, 27, 28, 29, 30]
+    fila1 = [1, 2, 'E', 4, 5, 'E', 7, 8, 9, 10]
+    fila2 = [11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
+    fila3 = [21, 22, 23, 24, 25, 26, 27, 28, 29, 30]
     fila4 = [31, 32, 33, 34, 35, 'S', 37, 38, 39, 40]
     fila5 = [41, 42, 43, 44, 45, 46, 47, 'S', 49, 50]
-    fila6 = [51, 52, 53, 54, 55, 56, 'E', 'S', 59, 60]
-    fila7 = [61, 62, 'S', 64, 65, 'CB', 67, 'M', 69, 'CB']
-    fila8 = [71, 'E', 73, 74, 75, 76, 'CB', 78, 79, 80]
+    fila6 = [51, 52, 53, 54, 55, 56, 57, 'S', 59, 60]
+    fila7 = [61, 62, 'S', 64, 65, 66, 67, 68, 69, 70]
+    fila8 = [71, 'E', 73, 74, 75, 76, 77, 78, 79, 80]
     fila9 = [81, 82, 83, 84, 'E', 'S', 87, 'S', 89, 90]
-    fila10 = [91, 92, 93, 94, 95, 'HL', 97, 'S', 99, 100]
+    fila10 = [91, 92, 93, 94, 95, 96, 97, 'S', 99, 100]
     diccionario = { 3: 18, 6: 67, 57: 83, 72: 89, 85: 96, 86: 45, 88: 31, 98: 79, 63: 22, 58: 37, 48: 12, 36: 17 }
     cascara1 = random.choice([i for i in range(21,99) if i not in [3,6,57,72,85,86,88,98,63,58,48,36]])
     cascara2 = random.choice([i for i in range(21,99) if i not in [3,6,57,72,85,86,88,98,63,58,48,36, cascara1]])
@@ -50,6 +50,11 @@ def playSnakes(partidasJugadas, estadisticas):
     magico3 = random.choice([i for i in range(1,99) if i not in [3,6,57,72,85,86,88,98,63,58,48,36, cascara1, cascara2, cascara3, cascara4, cascara5, magico1, magico2]])
     rushero = random.choice([i for i in range(1,99) if i not in [3,6,57,72,85,86,88,98,63,58,48,36,10,20,30,40,50,60,70,80,90, cascara1, cascara2, cascara3, cascara4, cascara5, magico1, magico2, magico3]])
     hongos =  random.choice([i for i in range(1,99) if i not in [3,6,57,72,85,86,88,98,63,58,48,36,1,11,21,31,41,51,61,71,81,91, cascara1, cascara2, cascara3, cascara4, cascara5, magico1, magico2, magico3, rushero]])
+    
+    def getTablero():
+        print('\n',fila10,'\n',fila9,'\n',fila8,'\n',fila7,'\n',fila6,'\n',fila5,'\n',fila4,'\n',fila3,'\n',fila2,'\n',fila1,'\n')
+        print('Cáscaras de banana:', cascara1, cascara2, cascara3, cascara4, cascara5, '\n', 'Mágicos:', magico1, magico2, magico3, '\n', 'Rushero:', rushero, '\n', 'Hongos Locos:', hongos) 
+    
     jugador1 = input('Ingrese el nombre del jugador 1: ')
     jugador2 = input('Ingrese el nombre del jugador 2: ')
     posicion1 = 1
@@ -59,7 +64,7 @@ def playSnakes(partidasJugadas, estadisticas):
     input('Ingrese la tecla enter para comenzar')
     start = True
     while start == True:
-        print('\n',fila10,'\n',fila9,'\n',fila8,'\n',fila7,'\n',fila6,'\n',fila5,'\n',fila4,'\n',fila3,'\n',fila2,'\n',fila1,'\n')
+        getTablero()
         dado = 0
         print(jugadorActual, 'debe tirar el dado')
         input('Ingrese la tecla enter para tirar el dado')
