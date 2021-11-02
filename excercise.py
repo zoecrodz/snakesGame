@@ -39,6 +39,18 @@ def playSnakes(partidasJugadas, estadisticas):
     fila8 = [71, 'E', 73, 74, 75, 76, 'CB', 78, 79, 80]
     fila9 = [81, 82, 83, 84, 'E', 'S', 87, 'S', 89, 90]
     fila10 = [91, 92, 93, 94, 95, 'HL', 97, 'S', 99, 100]
+    diccionario = { 3: 18, 6: 67, 57: 83, 72: 89, 85: 96, 86: 45, 88: 31, 98: 79, 63: 22, 58: 37, 48: 12, 36: 17 }
+    cascara1 = random.choice([i for i in range(21,99) if i not in [3,6,57,72,85,86,88,98,63,58,48,36]])
+    cascara2 = random.choice([i for i in range(21,99) if i not in [3,6,57,72,85,86,88,98,63,58,48,36, cascara1]])
+    cascara3 = random.choice([i for i in range(21,99) if i not in [3,6,57,72,85,86,88,98,63,58,48,36, cascara1, cascara2]])
+    cascara4 = random.choice([i for i in range(21,99) if i not in [3,6,57,72,85,86,88,98,63,58,48,36, cascara1, cascara2,cascara3]])
+    cascara5 = random.choice([i for i in range(21,99) if i not in [3,6,57,72,85,86,88,98,63,58,48,36, cascara1, cascara2, cascara3, cascara4]])
+    magico1 = random.choice([i for i in range(21,99) if i not in [3,6,57,72,85,86,88,98,63,58,48,36, cascara1, cascara2, cascara3, cascara4, cascara5]])
+    magico2 = random.choice([i for i in range(21,99) if i not in [3,6,57,72,85,86,88,98,63,58,48,36, cascara1, cascara2, cascara3, cascara4, cascara5, magico1]])
+    magico3 = random.choice([i for i in range(21,99) if i not in [3,6,57,72,85,86,88,98,63,58,48,36, cascara1, cascara2, cascara3, cascara4, cascara5, magico1, magico2]])
+    rushero = random.choice([i for i in range(21,99) if i not in [3,6,57,72,85,86,88,98,63,58,48,36, cascara1, cascara2, cascara3, cascara4, cascara5, magico1, magico2, magico3]])
+    hongos =  random.choice([i for i in range(21,99) if i not in [3,6,57,72,85,86,88,98,63,58,48,36, cascara1, cascara2, cascara3, cascara4, cascara5, magico1, magico2, magico3, rushero]])
+    print("cascara", cascara1, cascara2, cascara3, cascara4, cascara5, magico1, magico2, magico3, rushero, hongos)
     jugador1 = input('Ingrese el nombre del jugador 1: ')
     jugador2 = input('Ingrese el nombre del jugador 2: ')
     posicion1 = 1
@@ -65,71 +77,71 @@ def playSnakes(partidasJugadas, estadisticas):
             openMenu(partidasJugadas, estadisticas)
         else:
             if posicionActual == 3:
-                posicionActual = 18
+                posicionActual = diccionario[3]
                 estadisticas["E"] += 1
             elif posicionActual == 6:
-                posicionActual = 67
+                posicionActual = diccionario[6]
                 estadisticas["E"] += 1
-            elif posicionActual == 10:
-                posicionActual = random.randint(2,99)
-                estadisticas["M"] += 1
-            elif posicionActual == 12:
-                posicionActual = 20
-                estadisticas["R"] += 1
-            elif posicionActual == 17:
-                posicionActual = random.randint(2,99)
-                estadisticas["M"] += 1
-            elif posicionActual == 25:
-                posicionActual = 5
-                estadisticas["CB"] += 1
             elif posicionActual == 36:
-                posicionActual = 17
-                estadisticas["S"] += 1
-            elif posicionActual == 21:
-                posicionActual = 1
-                estadisticas["CB"] += 1
-            elif posicionActual == 48:
-                posicionActual = 12
+                posicionActual = diccionario[36]
                 estadisticas["S"] += 1
             elif posicionActual == 57:
-                posicionActual = 83
+                posicionActual = diccionario[57]
                 estadisticas["E"] += 1
             elif posicionActual == 58:
                 estadisticas["S"] += 1
-                posicionActual = 37
+                posicionActual = diccionario[58]
             elif posicionActual == 63:
-                posicionActual = 22
+                posicionActual = diccionario[63]
                 estadisticas["S"] += 1
-            elif posicionActual == 66:
-                posicionActual = 46
-                estadisticas["CB"] += 1
-            elif posicionActual == 68:
-                posicionActual = random.randint(2,99)
-                estadisticas["M"] += 1
-            elif posicionActual == 70:
-                posicionActual = 50
-                estadisticas["CB"] += 1
+            elif posicionActual == 48:
+                posicionActual = diccionario[48]
+                estadisticas["S"] += 1
             elif posicionActual == 72:
-                posicionActual = 89
+                posicionActual = diccionario[72]
                 estadisticas["E"] += 1
-            elif posicionActual == 77:
-                posicionActual = 57
-                estadisticas["CB"] += 1
+            elif posicionActual == 98:
+                posicionActual = diccionario[98]
+                estadisticas["S"] += 1
             elif posicionActual == 85:
-                posicionActual = 96
+                posicionActual = diccionario[85]
                 estadisticas["E"] += 1
             elif posicionActual == 86:
-                posicionActual = 45
+                posicionActual = diccionario[86]
                 estadisticas["S"] += 1
             elif posicionActual == 88:
-                posicionActual = 31
+                posicionActual = diccionario[88]
                 estadisticas["S"] += 1
-            elif posicionActual == 96:
-                posicionActual = 91
+            elif posicionActual == magico1:
+                posicionActual = random.randint(2,99)
+                estadisticas["M"] += 1
+            elif posicionActual == magico2:
+                posicionActual = random.randint(2,99)
+                estadisticas["M"] += 1
+            elif posicionActual == magico3:
+                posicionActual = random.randint(2,99)
+                estadisticas["M"] += 1
+            elif posicionActual == rushero:
+                posicionActual = ((math.floor(posicionActual / 10)) * 10) + 10
+                estadisticas["R"] += 1
+            elif posicionActual == cascara1:
+                posicionActual -= 10
+                estadisticas["CB"] += 1
+            elif posicionActual == cascara2:
+                posicionActual -= 10
+                estadisticas["CB"] += 1
+            elif posicionActual == cascara3:
+                posicionActual -= 10
+                estadisticas["CB"] += 1
+            elif posicionActual == cascara4:
+                posicionActual -= 10
+                estadisticas["CB"] += 1
+            elif posicionActual == cascara5:
+                posicionActual -= 10
+                estadisticas["CB"] += 1
+            elif posicionActual == hongos:
+                posicionActual = (math.floor(posicionActual / 10)) * 10
                 estadisticas["HL"] += 1
-            elif posicionActual == 98:
-                posicionActual = 79
-                estadisticas["S"] += 1
         print(jugadorActual, 'ahora está en la posición', posicionActual)
         if jugadorActual == jugador1:
             posicion1 = posicionActual
